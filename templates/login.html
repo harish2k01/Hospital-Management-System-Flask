@@ -1,0 +1,20 @@
+<html> 
+	<head>  
+		<title>Hospital Login</title>
+		<style>body{background-image:url({{url_for('static',filename='back.jpg')}});background-size:cover;}</style>
+	</head> 
+	<body><br><br><br><br> 
+		<div align="center">
+			<h1><p style="color:white"><font size="8">Login</font></p></h1>
+			<h2> 
+				<form action="{{ url_for('login') }}" method="post"> 
+				<p style="color:white">{{ msg }}</p><br>
+					<input id="Username" name="Username" type="text" placeholder="Enter Your Username"><br><br> 
+					<input id="Password" name="Password" type="password" placeholder="Enter Your Password"><br><br><br> 
+					<input type="submit" value="Sign In"><br><br> 
+				</form> 
+			</h2> 
+			<p style="color:white">Don't have an account? <a href="{{url_for('register')}}"> Sign Up here</a></p> 
+		</div> 
+	</body> 
+</html> 

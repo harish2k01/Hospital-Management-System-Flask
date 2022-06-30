@@ -1,0 +1,22 @@
+<html> 
+	<head>
+		<title>Index</title>
+		<style>body{background-image:url({{url_for('static',filename='back.jpg')}});background-size:cover;}</style>
+	</head> 
+	<body><br><br><br><br>  
+		<div align="center">  
+			<h1><p style="color:white"><font size="8">Welcome!</font></p></h1> 
+			<br>
+			<h2>
+				<p style="color:white">Hi<br>{{msg}}</p><br>
+				<form action="{{ url_for('create') }}" method="post"> 
+					<input type="submit" value="Create Patient Record"><br>
+				</form>
+				<form action="{{ url_for('view') }}" method="post">
+					<input type="submit" value="View Patient Details"><br>
+				</form>
+			</h2><br><br> 
+			<a href="{{ url_for('logout') }}">Logout</a>
+		</div>
+	</body>
+</html>

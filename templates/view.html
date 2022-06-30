@@ -1,0 +1,51 @@
+<html> 
+	<head>  
+		<title>View</title> 
+		<style>
+		table,th,td{padding:12px;}
+		body{background-image:url({{url_for('static',filename='back.jpg')}});background-size:cover;}
+		</style>			 
+	</head> 
+	<body>
+		<div align="center"> 
+			<h1><p style="color:white"><font size="7">Patient Details:</font></p></h1><br><br>
+			<form action="{{ url_for('view') }}" method="post">				
+				<label for="Name" style="color:white">Enter the Name:</label>&nbsp 
+				<input id="Name" name="Name" type="text">
+				<input type="submit" value="Search">
+			</form>
+			<form action="{{ url_for('index') }}" method="post">
+				<input type="submit" value="Back">
+			</form>
+			<table border="1" bordercolor="white" bgcolor="#091E33">
+				<thead style="color:white" align="center"><tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Age</th>
+					<th>DOB</th>
+					<th>Fathers Name</th>
+					<th>Mothers Name</th>
+					<th>Address</th>
+					<th>Mobile Number</th>
+					<th>Blood Group</th>
+					<th>Allergy</th>
+				</tr></thead>
+				{% for row in rows %}
+					<tr style="color:white">
+						<td>{{row["ID"]}}</td>
+						<td>{{row["Name"]}}</td>
+						<td>{{row["Age"]}}</td>
+						<td>{{row["DOB"]}}</td>
+						<td>{{row["Fathers_Name"]}}</td>
+						<td>{{row["Mothers_Name"]}}</td>
+						<td>{{row["Address"]}}</td>
+						<td>{{row["Mobile_No"]}}</td>
+						<td>{{row["Blood_Group"]}}</td>
+						<td>{{row["Allergy"]}}</td>
+					</tr>
+				{% endfor %}
+			</table><br><br>
+			<a href="{{ url_for('logout') }}">Logout</a>
+		</div>
+	</body>
+</html>

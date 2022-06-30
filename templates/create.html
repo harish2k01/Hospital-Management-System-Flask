@@ -1,0 +1,35 @@
+<html> 
+	<head>
+		<title>Create</title>					 
+		<style>
+		table,th,td{padding:12px;}
+		body{background-image:url({{url_for('static',filename='back.jpg')}});background-size:cover;}
+		</style>
+	</head>
+	<body> 
+		<div align="center"> 
+			<h1><p style="color:white"><font size="7">Create Patient Records:</font></p></h1> 
+		</div>
+		<table>
+			<div align="left">
+				<form action="{{ url_for('create') }}" method="post">
+					<center><p style="color:white"><font size="5">{{ msg }}</font></p><br></center>
+					<tr><td><label for="Name" style="color:white">Name:</label></td><td><input id="Name" name="Name" type="text"></td></tr>
+					<tr><td><label for="Age" style="color:white">Age:</label></td><td><input id="Age" name="Age" type="number" min="1" max="100"></td></tr>
+					<tr><td><label for="DOB" style="color:white">DOB:</label></td><td><input id="DOB" name="DOB" type="date"></td></tr>
+					<tr><td><label for="Fathers_Name" style="color:white">Fathers Name:</label></td><td><input id="Fathers_Name" name="Fathers_Name" type="text"></td></tr>
+					<tr><td><label for="Mothers_Name" style="color:white">Mothers Name:</label></td><td><input id="Mothers_Name" name="Mothers_Name" type="text"></td></tr>
+					<tr><td><label for="Address" style="color:white">Address:</label></td><td><input id="Address" name="Address" type="text"></td></tr>
+					<tr><td><label for="Mobile_No" style="color:white">Mobile Number:</label></td><td><input id="Mobile_No" name="Mobile_No" type="tel" pattern="[0-9]{10}"></td></tr>
+					<tr><td><label for="Blood_Group" style="color:white">Blood Group:</label></td><td><input id="Blood_Group" name="Blood_Group" type="text"></td></tr>
+					<tr><td><label for="Allergy" style="color:white">Allergy:</label></td><td><input id="Allergy" name="Allergy" type="text"></td></tr>
+					<tr><td><input type="submit" value="Submit"></td>
+				</form>
+			</div>
+			<form action="{{ url_for('index') }}" method="post">
+				<td><input type="submit" value="Back"></td></tr>
+			</form>
+		</table>
+				<a href="{{ url_for('logout') }}">Logout</a>
+	</body>
+</html>
